@@ -11,6 +11,19 @@
   font-family: "Manrope", sans-serif;
 }
 
+.my-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.my-scroll::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.my-scroll::-webkit-scrollbar-thumb {
+  background-color: rgba(62, 89, 143, 0.785);
+  outline: 1px solid rgba(31, 107, 183, 0);
+}
+
 /* START: General styles */
 .max-width {
   @apply max-w-[1440px] mx-auto;
@@ -188,7 +201,7 @@
 
 /* START: searchbar styles */
 .searchbar {
-  @apply flex items-center justify-start max-sm:flex-col w-full relative max-sm:gap-4 max-w-3xl;
+  @apply flex  justify-start max-sm:flex-col w-full relative max-sm:gap-4 max-w-3xl;
 }
 
 .searchbar__item {
@@ -196,7 +209,7 @@
 }
 
 .searchbar__input {
-  @apply w-full h-[48px] pl-12 p-4 bg-light-white rounded-r-full max-sm:rounded-full outline-none cursor-pointer text-sm;
+  @apply w-full h-[48px] pl-12 p-4 bg-[#064663] rounded-r-full max-sm:rounded-full outline-none cursor-pointer text-xl text-gray-200;
 }
 /* END: searchbar styles */
 
@@ -206,11 +219,11 @@
 }
 
 .search-manufacturer__input {
-  @apply w-full h-[48px] pl-12 p-4 rounded-l-full max-sm:rounded-full bg-light-white outline-none cursor-pointer text-sm;
+  @apply w-full h-[48px] pl-12 p-4 rounded-l-full max-sm:rounded-full bg-[#064663] outline-none cursor-pointer text-lg text-gray-200;
 }
 
 .search-manufacturer__options {
-  @apply absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm;
+  @apply absolute mt-1 max-h-60 w-full overflow-auto rounded-md text-gray-200 py-1 text-base shadow-lg ring-1 ring-white ring-opacity-5 focus:outline-none sm:text-sm;
 }
 
 .search-manufacturer__option {

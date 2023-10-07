@@ -14,14 +14,14 @@ const CarCard = ({ car }: CarCardProps) => {
   const carRent = calculateCarRent(city_mpg, year);
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <div className="car-card group">
+    <div className="car-card group !bg-[#04293A]">
       <div className="car-card__content">
-        <h2 className="car-card__content-title">
+        <h2 className="car-card__content-title text-gray-200">
           {make}
           {model}
         </h2>
       </div>
-      <p className="flex mt-6 text-[32px] font-extrabold">
+      <p className="flex mt-6 text-[32px] font-extrabold text-gray-300">
         <span className="self-start text-[14px] font-semibold">$</span>
         {carRent}
         <span className="self-end text-[14px] font-medium">/day</span>

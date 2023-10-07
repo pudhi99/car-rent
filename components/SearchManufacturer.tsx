@@ -45,13 +45,13 @@ const SearchManufacturer = ({
             leaveTo="opacity-0"
             afterLeave={() => setQuery("")}
           >
-            <Combobox.Options>
+            <Combobox.Options className=" absolute my-scroll top-14 bg-[#064663] w-full h-auto max-h-96 rounded-lg overflow-y-auto z-10">
               {filteredManufacturers.map((item) => (
                 <Combobox.Option
                   key={item}
                   className={({ active }) =>
                     `relative search-manufacturer__option ${
-                      active ? "bg-primary-blue text-white" : "text-gray-900"
+                      active ? "bg-primary-blue text-white" : "text-gray-200"
                     }`
                   }
                   value={item}
