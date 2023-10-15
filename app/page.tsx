@@ -1,8 +1,10 @@
-import CarCard from "@/components/CarCard";
-import CustomFilter from "@/components/CustomFilter";
-import Hero from "@/components/Hero";
-import SearchBar from "@/components/SearchBar";
-import ShowMore from "@/components/ShowMore";
+import dynamic from "next/dynamic";
+
+const Hero = dynamic(() => import("../components/Hero"));
+const SearchBar = dynamic(() => import("../components/SearchBar"));
+const CustomFilter = dynamic(() => import("../components/CustomFilter"));
+const CarCard = dynamic(() => import("../components/CarCard"));
+const ShowMore = dynamic(() => import("../components/ShowMore"));
 import { fuels, yearsOfProduction } from "@/constants";
 import { HomeProps } from "@/types";
 import { fetchCars } from "@/utils";

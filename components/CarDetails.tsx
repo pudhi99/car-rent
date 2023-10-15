@@ -49,6 +49,7 @@ const CarDetails = ({ isOpen, closeModel, car }: CarDetailsProps) => {
                       width={20}
                       height={20}
                       className="object-contain"
+                      priority
                     />
                   </button>
                   <div className="flex-1 flex flex-col gap-3">
@@ -57,7 +58,7 @@ const CarDetails = ({ isOpen, closeModel, car }: CarDetailsProps) => {
                         src={generateCarImageUrl(car, "angle")}
                         alt="car model"
                         fill
-                        priority
+                        loading="lazy"
                         className="object-contain"
                       />
                     </div>
@@ -67,7 +68,7 @@ const CarDetails = ({ isOpen, closeModel, car }: CarDetailsProps) => {
                           src={generateCarImageUrl(car, "29")}
                           alt="car model"
                           fill
-                          priority
+                          loading="lazy"
                           className="object-cover"
                         />
                       </div>
@@ -76,7 +77,7 @@ const CarDetails = ({ isOpen, closeModel, car }: CarDetailsProps) => {
                           src={generateCarImageUrl(car, "33")}
                           alt="car model"
                           fill
-                          priority
+                          loading="lazy"
                           className="object-cover"
                         />
                       </div>
@@ -85,7 +86,7 @@ const CarDetails = ({ isOpen, closeModel, car }: CarDetailsProps) => {
                           src={generateCarImageUrl(car, "13")}
                           alt="car model"
                           fill
-                          priority
+                          loading="lazy"
                           className="object-cover"
                         />
                       </div>

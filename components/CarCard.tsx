@@ -1,10 +1,11 @@
 "use client";
 import { CarProps } from "@/types";
 import { calculateCarRent, generateCarImageUrl } from "@/utils";
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import React, { useState } from "react";
-import CustomButton from "./CustomButton";
-import CarDetails from "./CarDetails";
+const CustomButton = dynamic(() => import("./CustomButton")); // Dynamic import for CustomButton
+const CarDetails = dynamic(() => import("./CarDetails")); // Dynamic import for CarDetails
 
 interface CarCardProps {
   car: CarProps;
@@ -31,8 +32,8 @@ const CarCard = ({ car }: CarCardProps) => {
           src={generateCarImageUrl(car)}
           alt="car model"
           fill
-          priority
           className="object-contain"
+          loading="lazy"
         />
       </div>
       <div className="relative flex w-full mt-2">
@@ -43,17 +44,30 @@ const CarCard = ({ car }: CarCardProps) => {
               width={20}
               height={20}
               alt="steering wheel"
+              loading="lazy"
             />
             <p className="text-[14px] leading-[17px]">
               {transmission === "a" ? "Automatic" : "Manual"}
             </p>
           </div>
           <div className="car-card__icon">
-            <Image src="/tire.svg" width={20} height={20} alt="seat" />
+            <Image
+              src="/tire.svg"
+              width={20}
+              height={20}
+              alt="seat"
+              loading="lazy"
+            />
             <p className="car-card__icon-text">{drive.toUpperCase()}</p>
           </div>
           <div className="car-card__icon">
-            <Image src="/gas.svg" width={20} height={20} alt="seat" />
+            <Image
+              src="/gas.svg"
+              width={20}
+              height={20}
+              alt="seat"
+              loading="lazy"
+            />
             <p className="car-card__icon-text">{city_mpg} MPG</p>
           </div>
         </div>

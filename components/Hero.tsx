@@ -1,7 +1,9 @@
 "use client";
 import React from "react";
-import CustomButton from "./CustomButton";
+import dynamic from "next/dynamic";
 import Image from "next/image";
+
+const CustomButton = dynamic(() => import("./CustomButton"));
 
 const Hero = () => {
   const handleScroll = () => {
@@ -11,11 +13,12 @@ const Hero = () => {
       nextSection.scrollIntoView({ behavior: "smooth" });
     }
   };
+
   return (
     <div className="hero">
       <div className="flex-1 pt-36 padding-x">
         <h1 className="hero__title text-[#ECB365]">
-          Find, book, or renta a car - quickly and easily!
+          Find, book, or rent a car - quickly and easily!
         </h1>
         <p className="hero__subtitle !text-gray-300">
           Streamline your car rental experience with our effortless booking
@@ -29,7 +32,13 @@ const Hero = () => {
       </div>
       <div className="hero__image-container">
         <div className="hero__image">
-          <Image src="/hero.png" alt="hero" fill className="object-contain" />
+          <Image
+            src="/hero.png"
+            alt="hero"
+            fill
+            className="object-contain"
+            // loading="lazy"
+          />
         </div>
         <div className="hero__image-overlay"></div>
       </div>
